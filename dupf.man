@@ -1,0 +1,33 @@
+
+DUPF(1)			OS/2 User's Manual			DUPF(1)
+
+NAME
+	dupf - 重複しているファイルを報告する
+
+SYNOPSIS
+	dupf [ options ]
+
+DESCRIPTION
+
+	dupf は標準入力からファイル名のリストを受け取り、それらのファイル
+	の中で重複している（ファイルの内容が等しい）ものがあればそれらを
+	報告する。
+
+EXAMPLE
+	通常は find(GNU版) と組合せて使うとよい。
+
+		find C:/ -print | dupf
+
+	これはドライブ C: で重複しているファイルを報告する。
+
+        出力形式はオプションで制御する。
+
+        -r      report
+                    ---
+                    TAB <file>
+		    TAB <file>
+		    :
+                    ---
+        -l      one line
+                    <file> <file> ....
+
